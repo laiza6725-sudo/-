@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОММИК | Премиум автосервис</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --glass: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Стилизация скроллбара */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* Навигация */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s ease;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass);
+        }
+
+        .navbar.scrolled {
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(220, 38, 38, 0.2);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(to right, var(--primary), #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 8px rgba(220, 38, 38, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid var(--gray);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            border: 1px solid var(--glass);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(220, 38, 38, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 1rem;
+            color: var(--primary-dark);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+            opacity: 0;
+            transition: all 0.4s ease;
+            transform: translateY(10px);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: rgba(15, 23, 42, 0.5);
+            position: relative;
+        }
+
+        .rating-overview {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .rating-badge {
+            background: var(--card-bg);
+            border: 1px solid var(--glass);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+        }
+
+        .rating-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-stars {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-counts {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .review-card:hover::before {
+            opacity: 1;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .reviewer-details {
+            flex: 1;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--light);
+        }
+
+        .reviewer-badge {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .review-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .review-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .review-content p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .review-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .review-likes,
+        .review-comments {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Recommendations Section */
+        .recommendations-section {
+            background: var(--card-bg);
+            border: 1px solid var(--glass);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .recommendations-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            text-align: center;
+        }
+
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .recommendation-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--glass);
+            transition: all 0.3s ease;
+        }
+
+        .recommendation-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .recommender-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .recommender-info {
+            flex: 1;
+        }
+
+        .recommender-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: var(--light);
+            text-transform: capitalize;
+        }
+
+        .recommender-badge,
+        .recommender-status {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--glass);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--glass);
+            border-radius: 8px;
+            color: var(--light);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(220, 38, 38, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            color: var(--gray);
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--glass);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+            text-align: center;
+            color: var(--gray);
+            border-top: 1px solid var(--glass);
+            margin-top: 3rem;
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .review-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .review-date {
+                align-self: flex-start;
+            }
+            
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rating-badge {
+                padding: 1.5rem;
+            }
+            
+            .rating-score {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-card, .review-card, .contact-form, .info-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">КОММИК</a>
+            
+            <div class="nav-links">
+                <a href="#services">Услуги</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contact">Контакты</a>
+            </div>
+            
+            <a href="#contact" class="nav-cta">Записаться</a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate-fade-in-up">
+            <div class="hero-badge">Премиум автосервис в Санкт-Петербурге</div>
+            <h1 class="hero-title">КОММИК</h1>
+            <p class="hero-subtitle">Профессиональный уход для вашего автомобиля. Современные технологии, квалифицированные специалисты и гарантия качества на все виды работ</p>
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">
+                    <i class="fas fa-list"></i> Наши услуги
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> Записаться онлайн
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header animate-fade-in-up">
+            <div class="section-subtitle">Что мы предлагаем</div>
+            <h2 class="section-title">Наши услуги</h2>
+            <p class="section-description">Полный спектр услуг по обслуживанию и ремонту автомобилей любых марок</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card animate-fade-in-up delay-100">
+                <div class="service-icon">
+                    <i class="fas fa-car-crash"></i>
+                </div>
+                <h3 class="service-title">Стапельные работы</h3>
+                <p class="service-description">Восстановление геометрии кузова после ДТП с использованием современного оборудования</p>
+                <a href="#" class="service-link">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="service-card animate-fade-in-up delay-200">
+                <div class="service-icon">
+                    <i class="fas fa-paint-roller"></i>
+                </div>
+                <h3 class="service-title">Покраска автомобиля</h3>
+                <p class="service-description">Профессиональная покраска в камере с гарантией долговечности и качества</p>
+                <a href="#" class="service-link">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="service-card animate-fade-in-up delay-300">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="service-title">Антикоррозийная обработка</h3>
+                <p class="service-description">Надежная защита кузова от коррозии с использованием сертифицированных материалов</p>
+                <a href="#" class="service-link">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="service-card animate-fade-in-up delay-100">
+                <div class="service-icon">
+                    <i class="fas fa-car-wash"></i>
+                </div>
+                <h3 class="service-title">Мойка автомобиля</h3>
+                <p class="service-description">Комплексная мойка и химчистка с использованием профессиональной химии</p>
+                <a href="#" class="service-link">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="service-card animate-fade-in-up delay-200">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="service-title">Компьютерная диагностика</h3>
+                <p class="service-description">Точная диагностика электронных систем с использованием современного оборудования</p>
+                <a href="#" class="service-link">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="service-card animate-fade-in-up delay-300">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="service-title">Шиномонтаж</h3>
+                <p class="service-description">Сезонная замена и ремонт шин на современном оборудовании</p>
+                <a href="#" class="service-link">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header animate-fade-in-up">
+            <div class="section-subtitle">Наши работы</div>
+            <h2 class="section-title">Галерея</h2>
+            <p class="section-description">Примеры выполненных работ и оснащение нашего сервиса</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item animate-fade-in-up delay-100">
+                <img src="https://images.unsplash.com/photo-1626887220972-6bfa78e204bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop&q=80" alt="Автосервис">
+                <div class="gallery-overlay">
+                    <h3>Стапельные работы</h3>
+                    <p>Восстановление геометрии кузова</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item animate-fade-in-up delay-200">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&w=400&h=300&fit=crop&q=80" alt="Автомобиль">
+                <div class="gallery-overlay">
+                    <h3>Покраска автомобиля</h3>
+                    <p>Профессиональная покраска в камере</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item animate-fade-in-up delay-300">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&w=400&h=300&fit=crop&q=80" alt="Интерьер">
+                <div class="gallery-overlay">
+                    <h3>Салон автомобиля</h3>
+                    <p>Чистка и восстановление салона</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item animate-fade-in-up delay-400">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&w=400&h=300&fit=crop&q=80" alt="Ремонт">
+                <div class="gallery-overlay">
+                    <h3>Техническое обслуживание</h3>
+                    <p>Профессиональный ремонт двигателя</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="section-header animate-fade-in-up">
+            <div class="section-subtitle">Мнения клиентов</div>
+            <h2 class="section-title">Отзывы</h2>
+            <div class="rating-overview">
+                <div class="rating-badge">
+                    <span class="rating-score">4,4</span>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-counts">
+                        <span>207 оценок</span>
+                        <span>80 отзывов</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="reviews-container">
+            <div class="reviews-grid">
+                <div class="review-card animate-fade-in-up delay-100">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Viktoria</div>
+                                <div class="reviewer-badge">Знаток города 10 уровня</div>
+                            </div>
+                        </div>
+                        <div class="review-date">18 мая 2024</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Отличный сервис. Диагностировали неисправность, согласовали работы по телефону, машину вернули чистую. Еще и поменяли решетку номера, когда заметили, что она сломана. Меняли масло, фильтры, ступицы и датчик, который отвечает за фары( не помню название). В обед…</p>
+                    </div>
+                    <div class="review-meta">
+                        <span class="review-likes">2</span>
+                        <span class="review-comments">2</span>
+                    </div>
+                </div>
+
+                <div class="review-card animate-fade-in-up delay-200">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Дмитрий Иванов</div>
+                                <div class="reviewer-badge">Знаток города 4 уровня</div>
+                            </div>
+                        </div>
+                        <div class="review-date">18 ноября 2024</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Отличный сервис. Пришёл, ключи отдал. Сказал, что беспокоит ( фары). В тот же день написали, что готово. Пришёл ключи забрал. Фара просто глючила. А сделали так что они ярче стали и не глючат. Поехал в ночь в другой город. Оценил работу. Был до этого в двух…</p>
+                    </div>
+                    <div class="review-meta">
+                        <span class="review-likes">2</span>
+                    </div>
+                </div>
+
+                <div class="review-card animate-fade-in-up delay-300">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Ягодка Морошка</div>
+                                <div class="reviewer-badge">Знаток города 3 уровня</div>
+                            </div>
+                        </div>
+                        <div class="review-date">25 мая 2024</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Это лучший сервис в городе! Самый честный! Помогут не только автомобилю, не навязывая услуги и очень качественно сделают свою работу. Спасибо за спасение моей киюшки и большую поддержку.</p>
+                    </div>
+                    <div class="review-meta">
+                        <span class="review-likes">1</span>
+                    </div>
+                </div>
+
+                <div class="review-card animate-fade-in-up delay-100">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Сергей Ландик</div>
+                                <div class="reviewer-badge">Знаток города 15 уровня</div>
+                            </div>
+                        </div>
+                        <div class="review-date">15 апреля 2024</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Отличный автосервис! Быстро и качественно выполнили ремонт. Персонал вежливый, цены адекватные. Теперь только сюда!</p>
+                    </div>
+                </div>
+
+                <div class="review-card animate-fade-in-up delay-200">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Анастасия Романюк</div>
+                                <div class="reviewer-badge">Знаток города 5 уровня</div>
+                            </div>
+                        </div>
+                        <div class="review-date">10 марта 2024</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Очень довольна обслуживанием. Помогли срочно отремонтировать машину перед поездкой. Спасибо за оперативность и качество!</p>
+                    </div>
+                </div>
+
+                <div class="review-card animate-fade-in-up delay-300">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Дарья Г.</div>
+                                <div class="reviewer-badge">Знаток города 4 уровня</div>
+                            </div>
+                        </div>
+                        <div class="review-date">5 февраля 2024</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Лучший сервис в городе! Честные цены, профессиональные мастера. Всегда все объяснят, покажут. Рекомендую всем!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок рекомендаций -->
+            <div class="recommendations-section animate-fade-in-up">
+                <h3 class="recommendations-title">Рекомендации для вас</h3>
+                <div class="recommendations-grid">
+                    <div class="recommendation-item">
+                        <div class="recommender-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="recommender-info">
+                            <div class="recommender-name">ульяна</div>
+                            <div class="recommender-status">В списке ваших близких в Яндекс ID</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommender-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="recommender-info">
+                            <div class="recommender-name">марк григорьев</div>
+                            <div class="recommender-badge">Знаток города 2 уровня</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommender-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="recommender-info">
+                            <div class="recommender-name">анатолий кудринский</div>
+                            <div class="recommender-badge">Знаток города 3 уровня</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header animate-fade-in-up">
+            <div class="section-subtitle">Свяжитесь с нами</div>
+            <h2 class="section-title">Контакты</h2>
+            <p class="section-description">Запишитесь на обслуживание или получите консультацию специалиста</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-form animate-fade-in-up delay-100">
+                <h3 class="info-title">
+                    <i class="fas fa-edit"></i> Заявка на ремонт
+                </h3>
+                <form id="service-form">
+                    <div class="form-group">
+                        <label class="form-label">Ваше имя</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Марка автомобиля</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Требуемая услуга</label>
+                        <select class="form-control">
+                            <option>Стапельные работы</option>
+                            <option>Покраска автомобиля</option>
+                            <option>Антикоррозийная обработка</option>
+                            <option>Мойка автомобиля</option>
+                            <option>Компьютерная диагностика</option>
+                            <option>Шиномонтаж</option>
+                            <option>Развал-схождение</option>
+                            <option>Заправка кондиционера</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Дополнительная информация</label>
+                        <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Отправить заявку
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-card animate-fade-in-up delay-200">
+                    <h3 class="info-title">
+                        <i class="fas fa-map-marker-alt"></i> Адрес
+                    </h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-label">Наш адрес</div>
+                            <div class="info-value">Петровская коса, 1Р, Санкт-Петербург</div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://yandex.ru/map-widget/v1/?ll=30.253193%2C59.962939&z=16&pt=30.253193%2C59.962939,pm2dml&l=map"></iframe>
+                    </div>
+                </div>
+                
+                <div class="info-card animate-fade-in-up delay-300">
+                    <h3 class="info-title">
+                        <i class="fas fa-clock"></i> Часы работы
+                    </h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-label">Понедельник - Пятница</div>
+                            <div class="info-value">9:00 - 21:00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-weekend"></i>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-label">Суббота - Воскресенье</div>
+                            <div class="info-value">10:00 - 18:00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card animate-fade-in-up delay-400">
+                    <h3 class="info-title">
+                        <i class="fas fa-phone"></i> Контакты
+                    </h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-label">Телефон</div>
+                            <div class="info-value">+7 (812) 235-02-35</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-label">Email</div>
+                            <div class="info-value">info@kommik.ru</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>КОММИК</h3>
+                <p>Профессиональный автосервис в Санкт-Петербурге с многолетним опытом работы и современным оборудованием.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Услуги</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Стапельные работы</a></li>
+                    <li><a href="#">Покраска автомобиля</a></li>
+                    <li><a href="#">Антикоррозийная обработка</a></li>
+                    <li><a href="#">Компьютерная диагностика</a></li>
+                    <li><a href="#">Шиномонтаж</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Контакты</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Петровская коса, 1Р</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> +7 (812) 235-02-35</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> info@kommik.ru</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Социальные сети</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fab fa-vk"></i> ВКонтакте</a></li>
+                    <li><a href="#"><i class="fab fa-telegram"></i> Telegram</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 КОММИК. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за всеми элементами с анимацией
+        document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Фиксация навигации при скролле
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Обработка формы
+        document.getElementById('service-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Ваша заявка принята! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
