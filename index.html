@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосервис Коммик на Крестовском острове СПб | Ремонт автомобилей</title>
+    <meta name="description" content="Профессиональный автосервис и автотехцентр Коммик на Крестовском острове в Санкт-Петербурге. Качественный ремонт, покраска, кузовные работы, шиномонтаж. Гарантия качества.">
+    <meta name="keywords" content="автосервис СПб, автотехцентр Крестовский остров, ремонт автомобилей, покраска авто, кузовные работы, шиномонтаж, развал-схождение">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Автосервис Коммик на Крестовском острове СПб">
+    <meta property="og:description" content="Профессиональный автосервис и автотехцентр в Санкт-Петербурге. Качественный ремонт автомобилей.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Автотехцентр Коммик",
+        "description": "Профессиональный автосервис и автотехцентр на Крестовском острове в Санкт-Петербурге",
+        "telephone": "+7-812-235-02-35",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Петровская коса, 1П",
+            "addressLocality": "Санкт-Петербург",
+            "addressRegion": "СПб",
+            "addressCountry": "RU"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 59.962967,
+            "longitude": 30.253076
+        },
+        "openingHours": [
+            "Mo-Fr 10:00-21:00"
+        ],
+        "serviceType": [
+            "Стапельные работы",
+            "Покраска авто",
+            "Антикоррозийная обработка",
+            "Кузовные работы",
+            "Шиномонтаж",
+            "Развал-схождение",
+            "Заправка кондиционеров"
+        ],
+        "areaServed": "Санкт-Петербург и Ленинградская область"
+    }
+    </script>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            --red: #dc2626;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.7;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('images/background.jpg');
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        /* Header */
+        .header {
+            background: url('images/header-bg.jpg') center/cover;
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-top {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .phone-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .phone-link:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ff0000;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        .nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 6px 0;
+            position: relative;
+            cursor: pointer;
+            opacity: 0.8;
+            white-space: nowrap;
+        }
+
+        .nav a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 30px 0 0;
+        }
+
+        .features-card {
+            background: rgba(100, 100, 100, 0.85);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 30px;
+        }
+
+        .features-card h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            color: #f0f0f0;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 70px 0 0;
+        }
+
+        .content-section {
+            background: rgba(100, 100, 100, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .content-section h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section p {
+            color: #f0f0f0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .service-item {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-item h3 {
+            color: #000000;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        .service-item p {
+            color: #000000;
+            margin-bottom: 0;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-item:hover::before {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .review-item {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .review-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .review-level {
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .review-date {
+            color: var(--secondary);
+        }
+
+        .review-text {
+            color: var(--secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .review-rating {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .star {
+            color: #fbbf24;
+            margin-right: 2px;
+        }
+
+        .load-more-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .load-more-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Highlight Section */
+        .highlight {
+            background: rgba(100, 100, 100, 0.85);
+            color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 70px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlight h3 {
+            color: #ffffff;
+        }
+
+        .highlight p {
+            color: #f0f0f0;
+        }
+
+        /* Gallery Section */
+        .works-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .work-item {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0);
+            transition: all 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .work-item:hover::after {
+            background: rgba(0,0,0,0.1);
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background: rgba(100, 100, 100, 0.85);
+            padding: 50px;
+            border-radius: 20px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .form-simple {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Map & Parking */
+        .map-parking-container {
+            margin: 80px 0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .map-parking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .map-square, .parking-square {
+            background: rgba(100, 100, 100, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .map-square h3, .parking-square h3 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .map-wrapper, .parking-wrapper {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .parking-scheme-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .parking-info {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .parking-info p {
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .parking-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 20px 40px;
+            margin-top: 100px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .motto {
+            font-style: italic;
+            margin-top: 25px;
+            opacity: 0.7;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            width: 100%;
+            color: #94a3b8;
+            grid-column: 1 / -1;
+        }
+
+        /* Buttons */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .admin-key {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .admin-key:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Admin Modal */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .admin-modal.active {
+            display: flex;
+        }
+
+        .admin-modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .admin-modal-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-modal-header h2 {
+            color: var(--dark);
+        }
+
+        .admin-modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+            transition: color 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-modal-close:hover {
+            color: var(--dark);
+            background: #f1f5f9;
+        }
+
+        .admin-modal-body {
+            padding: 30px;
+        }
+
+        .admin-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 16px;
+        }
+
+        .admin-section h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .admin-form-group {
+            margin-bottom: 20px;
+        }
+
+        .admin-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .admin-form-group input, .admin-form-group textarea, .admin-form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .admin-form-group input:focus, .admin-form-group textarea:focus, .admin-form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .admin-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .admin-btn.secondary {
+            background: var(--secondary);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item .delete {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .gallery-item .delete:hover {
+            background: rgba(220, 38, 38, 1);
+            transform: scale(1.1);
+        }
+
+        .services-admin {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-admin-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .service-admin-item h4 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-preview {
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2001;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-content {
+                flex-direction: column;
+                gap: 50px;
+            }
+            
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 100px 20px 40px;
+            }
+            
+            .header-top {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav {
+                padding: 10px 15px;
+            }
+            
+            .nav ul {
+                gap: 20px;
+            }
+            
+            .nav a {
+                font-size: 0.9rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .works-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-form {
+                padding: 40px 30px;
+            }
+            
+            .highlight {
+                padding: 40px 30px;
+            }
+            
+            .content-section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .admin-modal-content {
+                width: 95%;
+            }
+            
+            .admin-key {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .map-parking-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .map-square, .parking-square {
+                padding: 20px;
+            }
+            
+            .map-square h3, .parking-square h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .map-wrapper, .parking-wrapper {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .nav ul {
+                gap: 15px;
+            }
+            
+            .nav a {
+                font-size: 0.85rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.9rem;
+            }
+            
+            .services-grid {
+                gap: 20px;
+            }
+            
+            .service-item {
+                padding: 25px 20px;
+                min-height: 200px;
+            }
+            
+            .review-item {
+                padding: 20px;
+            }
+            
+            .admin-key {
+                bottom: 15px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .scroll-to-top {
+                bottom: 20px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/AutoRepair">
+    <!-- Кнопка прокрутки наверх -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Прокрутить наверх">↑</button>
+
+    <!-- Основной контент сайта -->
+    <header class="header" id="siteHeader">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="header-top">
+                <a href="tel:+78122350235" class="phone-link">+7 (812) 235-02-35</a>
+            </div>
+            <h1 id="mainTitle" class="animate-fade-in-up">КОММИК</h1>
+            <p id="mainSubtitle" class="animate-fade-in-up">Автосервис автотехцентр на Крестовском острове в Санкт-Петербурге</p>
+        </div>
+    </header>
+    
+    <!-- Навигационная панель под шапкой -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <ul>
+                <li><a onclick="scrollToSection('services')">Услуги</a></li>
+                <li><a onclick="scrollToSection('reviews')">Отзывы</a></li>
+                <li><a onclick="scrollToSection('gallery')">Наш автосервис</a></li>
+                <li><a onclick="scrollToSection('booking')">Записаться</a></li>
+                <li><a onclick="scrollToSection('contacts')">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Панель преимуществ -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-card animate-slide-in-right">
+                <h3>Наши преимущества</h3>
+                <ul class="features-list">
+                    <li>Бесплатная клиентская парковка</li>
+                    <li>Всегда свободные места</li>
+                    <li>Опытные специалисты</li>
+                    <li>Современное оборудование</li>
+                    <li>Гарантия на все виды работ</li>
+                    <li>Прозрачная система ценообразования</li>
+                    <li>Удобное расположение на Крестовском острове</li>
+                    <li>Работаем со всеми марками автомобилей</li>
+                    <li>Кафе для комфортного ожидания</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <div class="container">
+            <!-- О компании -->
+            <section class="content-section animate-fade-in-up">
+                <h2>Профессиональный автотехцентр в Санкт-Петербурге</h2>
+                <p>Автотехцентр "Коммик" на Крестовском острове предлагает полный спектр услуг по ремонту и обслуживанию автомобилей. Мы дорожим своей репутацией и гарантируем качественное выполнение работ.</p>
+            </section>
+            
+            <!-- Философия -->
+            <div class="highlight animate-fade-in">
+                <h3>Наша философия</h3>
+                <p>"Лучше своевременное обслуживание, чем дорогостоящий ремонт". Мы всегда обсуждаем и согласовываем все работы в зависимости от задач и бюджета клиента.</p>
+            </div>
+            
+            <!-- Услуги -->
+            <section id="services" class="content-section animate-fade-in-up">
+                <h2>Наши услуги</h2>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Услуги будут заполняться через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Отзывы -->
+            <section id="reviews" class="content-section animate-fade-in-up">
+                <h2>Отзывы наших клиентов</h2>
+                <div class="reviews-grid" id="reviewsGrid">
+                    <!-- Отзывы будут заполняться через JavaScript -->
+                </div>
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="loadMoreReviews">Показать еще отзывы</button>
+                </div>
+            </section>
+
+            <!-- Галерея -->
+            <section id="gallery" class="content-section animate-fade-in-up">
+                <h2>Наш автосервис</h2>
+                <p>Посмотрите фотографии нашего автотехцентра, оборудования и примеры выполненных работ. Мы гордимся нашим современным оснащением и качеством предоставляемых услуг.</p>
+                <div class="works-gallery" id="worksGallery">
+                    <!-- Галерея будет заполняться через JavaScript -->
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <p><strong>Посетите наш автосервис лично!</strong> Убедитесь в качестве нашего оборудования и профессионализме команды.</p>
+                </div>
+            </section>
+
+            <!-- Форма записи -->
+            <div class="booking-form animate-fade-in-up" id="booking">
+                <h2>Записаться на обслуживание</h2>
+                <form id="bookingForm" class="form-simple">
+                    <div class="form-group">
+                        <label for="clientName">ФИО:</label>
+                        <input type="text" id="clientName" name="clientName" required placeholder="Введите ваше полное имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">Номер телефона:</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить заявку</button>
+                </form>
+            </div>
+
+            <!-- Карта и парковка -->
+            <div class="map-parking-container animate-fade-in-up">
+                <div class="map-parking-grid">
+                    <!-- Карта -->
+                    <div class="map-square">
+                        <h3>Мы находимся</h3>
+                        <div class="map-wrapper">
+                            <iframe src="https://yandex.ru/map-widget/v1/?ll=30.253076%2C59.962967&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzcyNDE0MRI80JzQvtGB0LrQstCwLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0J_QtdGC0LLQtdGA0LrQsCDQutC-0YHRgtC-0LLRgdC60L7Qs9C-LCDQk9C10YDQvtCy0YvQuSDRmtC-0YHQtSwgMdCRIiwKDU9rQhIVbkVYQhCjD0vQu9C40YLQvtC80YMsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCy0YPRgNCzLCDQoNC10YjQtdC90LjRjyDQvtCx0YnQtdC50YHQu9C-0LLQuNGPLCAx0JEiCg2YvBCCFZLGV0I%2C&z=16.8" allowfullscreen="true"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Схема парковки -->
+                    <div class="parking-square">
+                        <h3>Схема парковки</h3>
+                        <div class="parking-wrapper">
+                            <img id="parkingSchemeImage" class="parking-scheme-image" src="images/parking-scheme.jpg" alt="Схема парковки автотехцентра Коммик на Крестовском острове">
+                        </div>
+                        <div class="parking-info">
+                            <p><strong>Адрес парковки:</strong> г. Санкт-Петербург, Крестовский остров, Петровская коса, 1П</p>
+                            <p><strong>Особенности:</strong> Бесплатная парковка для клиентов, удобный подъезд</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer" id="contacts">
+        <!-- Кнопка админ-панели -->
+        <button class="admin-key" id="adminKey">⚙️</button>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Контакты</h3>
+                    <p><strong>Телефон:</strong> <span id="footerPhone">+7 (812) 235-02-35</span></p>
+                    <p><strong>Адрес:</strong> г. Санкт-Петербург, Крестовский остров, Петровская коса, 1П</p>
+                    <p><strong>Режим работы:</strong> <span id="footerHours">Понедельник-пятница с 10:00 до 21:00</span></p>
+                    <p class="motto">Автотехцентр "Коммик" - качество, которому доверяют!</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Как добраться</h3>
+                    <p>Удобный подъезд с Петровской косы. Бесплатная парковка для клиентов.</p>
+                    <p>Ближайшие станции метро: Крестовский остров, Чкаловская</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Автотехцентр "Коммик". Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Админ-модальное окно -->
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h2>Панель управления сайтом</h2>
+                <button class="admin-modal-close" id="adminModalClose">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="admin-section">
+                    <h3>Фон сайта</h3>
+                    <div class="admin-grid">
+                        <div class="admin-form-group">
+                            <label>Загрузить фоновое изображение</label>
+                            <input type="file" id="bgImageInput" accept="image/*">
+                            <button class="admin-btn" id="setBgBtn">Установить фон</button>
+                            <button class="admin-btn secondary" id="resetBgBtn">Сбросить фон</button>
+                            <button class="admin-btn secondary" id="setDefaultBgBtn" style="margin-top: 5px;">Установить фон по умолчанию</button>
+                        </div>
+                        <div class="admin-form-group">
+                            <label>Превью фона</label>
+                            <div id="bgPreview" class="service-preview">
+                                Текущий фон
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Фон шапки сайта</h3>
+                    <div class="admin-grid">
+                        <div class="admin-form-group">
+                            <label>Загрузить фоновое изображение для шапки</label>
+                            <input type="file" id="headerBgImageInput" accept="image/*">
+                            <button class="admin-btn" id="setHeaderBgBtn">Установить фон шапки</button>
+                            <button class="admin-btn secondary" id="resetHeaderBgBtn">Сбросить фон шапки</button>
+                        </div>
+                        <div class="admin-form-group">
+                            <label>Превью фона шапки</label>
+                            <div id="headerBgPreview" class="service-preview">
+                                Текущий фон шапки
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Секция для схемы парковки -->
+                <div class="admin-section">
+                    <h3>Схема парковки</h3>
+                    <div class="admin-grid">
+                        <div class="admin-form-group">
+                            <label>Загрузить схему парковки</label>
+                            <input type="file" id="parkingSchemeInput" accept="image/*">
+                            <button class="admin-btn" id="setParkingSchemeBtn">Установить схему парковки</button>
+                            <button class="admin-btn secondary" id="resetParkingSchemeBtn">Сбросить схему парковки</button>
+                        </div>
+                        <div class="admin-form-group">
+                            <label>Превью схемы парковки</label>
+                            <div id="parkingSchemePreview" class="service-preview">
+                                Текущая схема парковки
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Галерея работ</h3>
+                    <div class="admin-form-group">
+                        <label>Добавить фото в галерею работ</label>
+                        <input type="file" id="galleryImageInput" accept="image/*" multiple>
+                        <button class="admin-btn" id="addGalleryImageBtn">Добавить в галерею</button>
+                    </div>
+                    <div class="gallery" id="adminGallery">
+                        <!-- Здесь будут миниатюры загруженных изображений -->
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Фото для услуг</h3>
+                    <p style="margin-bottom: 20px; color: var(--secondary);">Добавьте фотографии для каждого вида услуг</p>
+                    <div class="services-admin" id="servicesAdmin">
+                        <!-- Услуги для администрирования будут заполнены через JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Редактирование текста</h3>
+                    <div class="admin-grid">
+                        <div class="admin-form-group">
+                            <label>Заголовок сайта</label>
+                            <input type="text" id="siteTitle" value="КОММИК">
+                        </div>
+                        <div class="admin-form-group">
+                            <label>Подзаголовок</label>
+                            <input type="text" id="siteSubtitle" value="Автосервис автотехцентр на Крестовском острове в Санкт-Петербурге">
+                        </div>
+                        <div class="admin-form-group">
+                            <label>Телефон</label>
+                            <input type="text" id="sitePhone" value="+7 (812) 235-02-35">
+                        </div>
+                        <div class="admin-form-group">
+                            <label>Режим работы</label>
+                            <input type="text" id="siteHours" value="Понедельник-пятница с 10:00 до 21:00">
+                        </div>
+                    </div>
+                    <button class="admin-btn" id="saveTextBtn">Сохранить текстовые изменения</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра изображений -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img src="" alt="" class="modal-image" id="modalImage">
+        </div>
+    </div>
+
+    <script>
+        // Константы
+        const DEFAULT_BACKGROUND = 'images/background.jpg';
+        const DEFAULT_PARKING_SCHEME = 'images/parking-scheme.jpg';
+
+        // Демонстрационные изображения для галереи
+        const defaultGalleryImages = [
+            'images/service-stapel.jpg',
+            'images/service-paint.jpg',
+            'images/service-body.jpg',
+            'images/service-wash.jpg',
+            'images/service-tire.jpg',
+            'images/service-alignment.jpg'
+        ];
+
+        // Данные услуг
+        const servicesData = [
+            { 
+                id: 'stapel', 
+                name: 'Стапельные работы', 
+                description: 'Восстановление геометрии кузова автомобиля после ДТП. Используем современное стапельное оборудование для точного выравнивания каркаса кузова. Работаем с любыми типами деформаций.',
+                image: 'images/service-stapel.jpg'
+            },
+            { 
+                id: 'paint', 
+                name: 'Покраска авто', 
+                description: 'Профессиональная покраска автомобиля в специализированной камере с системой фильтрации. Используем качественные материалы ведущих производителей. Гарантия на работы 2 года.',
+                image: 'images/service-paint.jpg'
+            },
+            { 
+                id: 'antikor', 
+                name: 'Антикоррозийная обработка', 
+                description: 'Комплексная защита кузова от коррозии с использованием современных материалов. Обработка скрытых полостей, днища, арок. Защита от реагентов и влаги.',
+                image: 'images/service-antikor.jpg'
+            },
+            { 
+                id: 'body', 
+                name: 'Кузовные работы', 
+                description: 'Полный спектр кузовного ремонта: рихтовка, замена элементов, сварка, восстановление геометрии. Работаем с оригинальными и аналоговыми запчастями.',
+                image: 'images/service-body.jpg'
+            },
+            { 
+                id: 'wash', 
+                name: 'Мойка автомобилей', 
+                description: 'Комплексная мойка внешних поверхностей и уборка салона. Используем профессиональную химию и оборудование. Детейлинг и защитное покрытие.',
+                image: 'images/service-wash.jpg'
+            },
+            { 
+                id: 'tire', 
+                name: 'Шиномонтаж', 
+                description: 'Полный спектр услуг по шиномонтажу: замена, балансировка, ремонт шин и дисков. Сезонное хранение шин. Компьютерная балансировка нового поколения.',
+                image: 'images/service-tire.jpg'
+            },
+            { 
+                id: 'alignment', 
+                name: 'Развал-схождение', 
+                description: 'Компьютерная регулировка углов установки колес на современном стенде. Обеспечиваем точные параметры для оптимальной управляемости и износа шин.',
+                image: 'images/service-alignment.jpg'
+            },
+            { 
+                id: 'ac', 
+                name: 'Заправка кондиционеров', 
+                description: 'Диагностика и заправка автомобильных кондиционеров. Устранение утечек, замена компрессоров. Используем качественный фреон и оборудование.',
+                image: 'images/service-ac.jpg'
+            },
+            { 
+                id: 'custom', 
+                name: 'Индивидуальный подход к нестандартным ситуациям', 
+                description: 'Решение сложных и нестандартных задач по ремонту и обслуживанию автомобилей. Разработка индивидуальных решений для уникальных случаев. Консультации по сложным техническим вопросам.',
+                image: 'images/service-custom.jpg'
+            }
+        ];
+
+        // Данные отзывов
+        const reviewsData = [
+            {
+                author: "Дмитрий Григорьев",
+                level: "Знаток города 4 уровня",
+                date: "27 октября 2024",
+                text: "Заказывал ремонт креплений переднего бампера на Рено Сандеро Стэпвэй 2. Прекрасный сервис, чёткая быстрая работа! Чистота, порядок👍 И руководство и сотрудники - молодцы!!",
+                rating: 5
+            },
+            {
+                author: "Кира Калинина",
+                level: "Знаток города 9 уровня",
+                date: "29 февраля 2024",
+                text: "Ремонтировала своего КИЮшку, прекрасный сервис, сделали все четко, в оговоренные сроки, работа на 5ку!!! Очень ответственные и честные ребята! Ответили на все вопросы! Спасибо огромное!!! Теперь только к Вам!!! Рекомендую сервис!",
+                rating: 5
+            },
+            {
+                author: "Кирилл П.",
+                level: "Знаток города 2 уровня",
+                date: "23 апреля",
+                text: "Отличный сервис, обслуживаю тут несколько машин. Хорошее соотношение цена/качество, не навязывают ненужный ремонт",
+                rating: 5
+            },
+            {
+                author: "Наталья",
+                level: "Знаток города 2 уровня",
+                date: "27 мая",
+                text: "Хорошие ребята, качественный, быстрый ремонт. Адекватные цены . Электрик- золотые руки! Спасибо вам, что при полной загрузке всегда берете в тот же день. По мерседесу знают все болячки!",
+                rating: 5
+            },
+            {
+                author: "Алексей Корнеенков",
+                level: "Знаток города 21 уровня",
+                date: "12 декабря 2024",
+                text: "Приняли машину и отдали в назначенное время. Цена приемлемая. Боксы чистые. Всё понравилось.",
+                rating: 5
+            },
+            {
+                author: "Елена",
+                level: "Знаток города 5 уровня",
+                date: "16 ноября 2023",
+                text: "Отличная станция, работают мастера своего дела. Внимательность, дружелюбная обстановка, отличный сервис и комфортные цены. Обслуживаю свой автомобиль только здесь",
+                rating: 5
+            },
+            {
+                author: "Михаил Юрьевич",
+                level: "Знаток города 22 уровня",
+                date: "26 октября 2021",
+                text: "Отличный сервис. Заехал переобуться « на зиму». Порекомендовали замену колодок. Цена на колодки без накрутки по цены интернет-магазина и причем в этот же день привезли. Заменил колодки, прменял резину. Мастер Герман очень аккуратный и грамотный. Важно и то, что монтаж шин проводится в теплом помещении на качественном оборудовании. Теперь только сюда, в т.ч и на плановое ТО.",
+                rating: 5
+            },
+            {
+                author: "Антон",
+                level: "Знаток города 11 уровня",
+                date: "14 мая 2020",
+                text: "Всё отлично сделали. Был у нас шиномонтаж - недорого. Заодно пообщались с директором и он предложил нам решить проблему со знаком 'внимание'. Покопались они в мозгах машины и решили проблему. Но потом она снова появилась. Позвонил, приехал. Всё осмотрели бесплатно. Проблему нашли определили ее решение. В общем Спасибо!",
+                rating: 5
+            },
+            {
+                author: "Светлана Федорова",
+                level: "Знаток города 11 уровня",
+                date: "3 сентября 2021",
+                text: "Лучшее место для вашего авто) Все и сразу, но имейте в иду, может быть очередь И мойка и то и покраска и починка и сбор с нуля, если ваша машина превратилась в хлам",
+                rating: 5
+            },
+            {
+                author: "Slava Landik",
+                level: "Знаток города 3 уровня",
+                date: "11 декабря 2018",
+                text: "Очень хороший авто сервис!!! Есть малярно кузовные работы, все виды слесарных, сварочных, шиномонтаж, развал схождения , мойка , кафе и завправка кондиционеров.",
+                rating: 5
+            },
+            {
+                author: "Иван К.",
+                level: "Знаток города 5 уровня",
+                date: "1 февраля 2024",
+                text: "После замены масла ДВС не докрутили крепление защиты картера, в итоге стуки подвески, волнение и доп затраты по поиску проблемы в другом сервисе.",
+                rating: 3
+            },
+            {
+                author: "Vitalii Rott",
+                level: "Знаток города 10 уровня",
+                date: "24 ноября 2021",
+                text: "Хороший сервис. Люди здесь работают профессиональные. Несмотря на то, что клиентов было много, нашли возможность меня принять. Обслужили быстро и качественно.",
+                rating: 5
+            }
+        ];
+
+        // Основные функции
+        function setDefaultBackground() {
+            document.body.style.backgroundImage = `url(${DEFAULT_BACKGROUND})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundAttachment = 'fixed';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundRepeat = 'no-repeat';
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const navHeight = document.getElementById('mainNav').offsetHeight;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function initializeGallery() {
+            const savedImages = JSON.parse(localStorage.getItem('galleryImages'));
+            if (!savedImages || savedImages.length === 0) {
+                localStorage.setItem('galleryImages', JSON.stringify(defaultGalleryImages));
+            }
+        }
+
+        function loadGallery() {
+            const gallery = document.getElementById('worksGallery');
+            const adminGallery = document.getElementById('adminGallery');
+            
+            if (!gallery || !adminGallery) return;
+            
+            gallery.innerHTML = '';
+            adminGallery.innerHTML = '';
+            
+            const savedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+            
+            savedImages.forEach((imgData, index) => {
+                // Основная галерея
+                const workItem = document.createElement('div');
+                workItem.className = 'work-item';
+                workItem.style.backgroundImage = `url(${imgData})`;
+                workItem.addEventListener('click', function() {
+                    openModal(imgData);
+                });
+                gallery.appendChild(workItem);
+                
+                // Админ-галерея
+                const adminItem = document.createElement('div');
+                adminItem.className = 'gallery-item';
+                adminItem.style.backgroundImage = `url(${imgData})`;
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete';
+                deleteBtn.innerHTML = '×';
+                deleteBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    deleteImage(index);
+                });
+                
+                adminItem.appendChild(deleteBtn);
+                adminGallery.appendChild(adminItem);
+            });
+        }
+
+        function deleteImage(index) {
+            const savedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+            savedImages.splice(index, 1);
+            localStorage.setItem('galleryImages', JSON.stringify(savedImages));
+            loadGallery();
+        }
+
+        function loadServices() {
+            const servicesGrid = document.getElementById('servicesGrid');
+            const servicesAdmin = document.getElementById('servicesAdmin');
+            
+            if (!servicesGrid || !servicesAdmin) return;
+            
+            servicesGrid.innerHTML = '';
+            servicesAdmin.innerHTML = '';
+            
+            const savedServiceImages = JSON.parse(localStorage.getItem('serviceImages')) || {};
+            
+            servicesData.forEach(service => {
+                const serviceImage = savedServiceImages[service.id] || service.image;
+                
+                // Основная сетка услуг
+                const serviceItem = document.createElement('div');
+                serviceItem.className = 'service-item';
+                serviceItem.style.backgroundImage = `url(${serviceImage})`;
+                serviceItem.innerHTML = `
+                    <div class="service-content">
+                        <h3>${service.name}</h3>
+                        <p>${service.description}</p>
+                    </div>
+                `;
+                servicesGrid.appendChild(serviceItem);
+                
+                // Админ-панель
+                const adminItem = document.createElement('div');
+                adminItem.className = 'service-admin-item';
+                adminItem.innerHTML = `
+                    <h4>${service.name}</h4>
+                    <div class="service-preview" id="preview-${service.id}" style="background-image: url(${serviceImage})">
+                        ${serviceImage ? '' : 'Нет изображения'}
+                    </div>
+                    <input type="file" id="file-${service.id}" accept="image/*" class="service-file-input">
+                    <button class="admin-btn set-service-image" data-service="${service.id}">Установить изображение</button>
+                    <button class="admin-btn secondary remove-service-image" data-service="${service.id}" style="margin-top: 5px; ${!savedServiceImages[service.id] ? 'display: none;' : ''}">Удалить изображение</button>
+                `;
+                servicesAdmin.appendChild(adminItem);
+            });
+            
+            // Обработчики для кнопок установки изображений услуг
+            document.querySelectorAll('.set-service-image').forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceId = this.getAttribute('data-service');
+                    const fileInput = document.getElementById(`file-${serviceId}`);
+                    
+                    if (fileInput.files && fileInput.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const savedServiceImages = JSON.parse(localStorage.getItem('serviceImages')) || {};
+                            savedServiceImages[serviceId] = e.target.result;
+                            localStorage.setItem('serviceImages', JSON.stringify(savedServiceImages));
+                            
+                            // Обновляем превью
+                            const preview = document.getElementById(`preview-${serviceId}`);
+                            preview.style.backgroundImage = `url(${e.target.result})`;
+                            preview.textContent = '';
+                            
+                            // Показываем кнопку удаления
+                            const removeBtn = document.querySelector(`.remove-service-image[data-service="${serviceId}"]`);
+                            if (removeBtn) removeBtn.style.display = 'block';
+                            
+                            // Обновляем основную сетку услуг
+                            loadServices();
+                        };
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                });
+            });
+            
+            // Обработчики для кнопок удаления изображений услуг
+            document.querySelectorAll('.remove-service-image').forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceId = this.getAttribute('data-service');
+                    const savedServiceImages = JSON.parse(localStorage.getItem('serviceImages')) || {};
+                    delete savedServiceImages[serviceId];
+                    localStorage.setItem('serviceImages', JSON.stringify(savedServiceImages));
+                    
+                    // Обновляем превью
+                    const preview = document.getElementById(`preview-${serviceId}`);
+                    if (preview) {
+                        const defaultImage = servicesData.find(s => s.id === serviceId).image;
+                        preview.style.backgroundImage = `url(${defaultImage})`;
+                        preview.textContent = '';
+                    }
+                    
+                    // Скрываем кнопку удаления
+                    this.style.display = 'none';
+                    
+                    // Обновляем основную сетку услуг
+                    loadServices();
+                });
+            });
+        }
+
+        function loadReviews() {
+            const reviewsGrid = document.getElementById('reviewsGrid');
+            if (!reviewsGrid) return;
+            
+            reviewsGrid.innerHTML = '';
+            
+            // Показываем первые 6 отзывов
+            const initialReviews = reviewsData.slice(0, 6);
+            
+            initialReviews.forEach(review => {
+                const reviewItem = document.createElement('div');
+                reviewItem.className = 'review-item';
+                
+                // Создаем звезды рейтинга
+                let starsHtml = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < review.rating) {
+                        starsHtml += '<span class="star">★</span>';
+                    } else {
+                        starsHtml += '<span class="star" style="color: #d1d5db">★</span>';
+                    }
+                }
+                
+                reviewItem.innerHTML = `
+                    <div class="review-header">
+                        <div>
+                            <div class="review-author">${review.author}</div>
+                            <div class="review-level">${review.level}</div>
+                        </div>
+                        <div class="review-date">${review.date}</div>
+                    </div>
+                    <div class="review-text">${review.text}</div>
+                    <div class="review-rating">${starsHtml}</div>
+                `;
+                
+                reviewsGrid.appendChild(reviewItem);
+            });
+            
+            // Настройка кнопки "Показать еще"
+            const loadMoreBtn = document.getElementById('loadMoreReviews');
+            if (!loadMoreBtn) return;
+            
+            let currentReviewsCount = 6;
+            
+            loadMoreBtn.addEventListener('click', function() {
+                const nextReviews = reviewsData.slice(currentReviewsCount, currentReviewsCount + 6);
+                
+                if (nextReviews.length === 0) {
+                    loadMoreBtn.style.display = 'none';
+                    return;
+                }
+                
+                nextReviews.forEach(review => {
+                    const reviewItem = document.createElement('div');
+                    reviewItem.className = 'review-item';
+                    
+                    // Создаем звезды рейтинга
+                    let starsHtml = '';
+                    for (let i = 0; i < 5; i++) {
+                        if (i < review.rating) {
+                            starsHtml += '<span class="star">★</span>';
+                        } else {
+                            starsHtml += '<span class="star" style="color: #d1d5db">★</span>';
+                        }
+                    }
+                    
+                    reviewItem.innerHTML = `
+                        <div class="review-header">
+                            <div>
+                                <div class="review-author">${review.author}</div>
+                                <div class="review-level">${review.level}</div>
+                            </div>
+                            <div class="review-date">${review.date}</div>
+                        </div>
+                        <div class="review-text">${review.text}</div>
+                        <div class="review-rating">${starsHtml}</div>
+                    `;
+                    
+                    reviewsGrid.appendChild(reviewItem);
+                });
+                
+                currentReviewsCount += 6;
+                
+                if (currentReviewsCount >= reviewsData.length) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.add('active');
+        }
+
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Наблюдаем за всеми секциями с контентом
+            document.querySelectorAll('.content-section, .highlight, .booking-form, .map-parking-container').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Функции для обновления превью
+        function updateBgPreview() {
+            const bgPreview = document.getElementById('bgPreview');
+            if (bgPreview) {
+                const savedBg = localStorage.getItem('siteBackground');
+                if (savedBg) {
+                    bgPreview.style.backgroundImage = `url(${savedBg})`;
+                    bgPreview.textContent = '';
+                } else {
+                    bgPreview.style.backgroundImage = `url(${DEFAULT_BACKGROUND})`;
+                    bgPreview.textContent = '';
+                }
+            }
+        }
+
+        function updateHeaderBgPreview() {
+            const headerBgPreview = document.getElementById('headerBgPreview');
+            if (headerBgPreview) {
+                const savedHeaderBg = localStorage.getItem('headerBackground');
+                if (savedHeaderBg) {
+                    headerBgPreview.style.backgroundImage = `url(${savedHeaderBg})`;
+                    headerBgPreview.textContent = '';
+                } else {
+                    headerBgPreview.style.backgroundImage = 'url(\'images/header-bg.jpg\')';
+                    headerBgPreview.textContent = '';
+                }
+            }
+        }
+
+        function updateParkingSchemePreview() {
+            const parkingSchemePreview = document.getElementById('parkingSchemePreview');
+            if (parkingSchemePreview) {
+                const savedParkingScheme = localStorage.getItem('parkingScheme');
+                if (savedParkingScheme) {
+                    parkingSchemePreview.style.backgroundImage = `url(${savedParkingScheme})`;
+                    parkingSchemePreview.textContent = '';
+                } else {
+                    parkingSchemePreview.style.backgroundImage = `url(${DEFAULT_PARKING_SCHEME})`;
+                    parkingSchemePreview.textContent = '';
+                }
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        window.addEventListener('load', function() {
+            // Инициализируем галерею демо-изображениями
+            initializeGallery();
+            
+            // Загружаем сохраненный фон
+            const savedBg = localStorage.getItem('siteBackground');
+            if (savedBg) {
+                document.body.style.backgroundImage = `url(${savedBg})`;
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundAttachment = 'fixed';
+            } else {
+                setDefaultBackground();
+            }
+            
+            // Загружаем другие сохраненные данные
+            const savedHeaderBg = localStorage.getItem('headerBackground');
+            if (savedHeaderBg) {
+                const header = document.getElementById('siteHeader');
+                header.style.backgroundImage = `url(${savedHeaderBg})`;
+            }
+            
+            const savedParkingScheme = localStorage.getItem('parkingScheme');
+            if (savedParkingScheme) {
+                const parkingSchemeImage = document.getElementById('parkingSchemeImage');
+                parkingSchemeImage.src = savedParkingScheme;
+            }
+            
+            // Обновляем превью
+            updateBgPreview();
+            updateHeaderBgPreview();
+            updateParkingSchemePreview();
+            
+            // Загружаем контент
+            loadGallery();
+            loadServices();
+            loadReviews();
+            
+            // Добавляем анимации при скролле
+            initScrollAnimations();
+            
+            // Загружаем сохраненные текстовые данные
+            const title = localStorage.getItem('siteTitle');
+            const subtitle = localStorage.getItem('siteSubtitle');
+            const phone = localStorage.getItem('sitePhone');
+            const hours = localStorage.getItem('siteHours');
+            
+            if (title) {
+                document.getElementById('mainTitle').textContent = title;
+                document.getElementById('siteTitle').value = title;
+            }
+            
+            if (subtitle) {
+                document.getElementById('mainSubtitle').textContent = subtitle;
+                document.getElementById('siteSubtitle').value = subtitle;
+            }
+            
+            if (phone) {
+                document.getElementById('footerPhone').textContent = phone;
+                document.querySelector('.phone-link').textContent = phone;
+                document.getElementById('sitePhone').value = phone;
+            }
+            
+            if (hours) {
+                document.getElementById('footerHours').textContent = hours;
+                document.getElementById('siteHours').value = hours;
+            }
+        });
+
+        // Кнопка прокрутки наверх
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Админ-модальное окно
+        const adminKey = document.getElementById('adminKey');
+        const adminModal = document.getElementById('adminModal');
+        const adminModalClose = document.getElementById('adminModalClose');
+        if (adminKey && adminModal) {
+            adminKey.addEventListener('click', function() {
+                adminModal.classList.add('active');
+            });
+            adminModalClose.addEventListener('click', function() {
+                adminModal.classList.remove('active');
+            });
+            adminModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        }
+
+        // Обработка формы записи
+        const bookingForm = document.getElementById('bookingForm');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = {
+                    name: document.getElementById('clientName').value,
+                    phone: document.getElementById('clientPhone').value
+                };
+                alert(`Спасибо, ${formData.name}! Ваша заявка принята. Мы свяжемся с вами по номеру ${formData.phone} в ближайшее время.`);
+                this.reset();
+            });
+        }
+
+        // Установка фона сайта
+        const setBgBtn = document.getElementById('setBgBtn');
+        if (setBgBtn) {
+            setBgBtn.addEventListener('click', function() {
+                const fileInput = document.getElementById('bgImageInput');
+                if (fileInput.files && fileInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.body.style.backgroundImage = `url(${e.target.result})`;
+                        document.body.style.backgroundSize = 'cover';
+                        document.body.style.backgroundAttachment = 'fixed';
+                        localStorage.setItem('siteBackground', e.target.result);
+                        updateBgPreview();
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            });
+        }
+
+        // Сброс фона сайта
+        const resetBgBtn = document.getElementById('resetBgBtn');
+        if (resetBgBtn) {
+            resetBgBtn.addEventListener('click', function() {
+                setDefaultBackground();
+                localStorage.removeItem('siteBackground');
+                updateBgPreview();
+            });
+        }
+
+        // Установка фона по умолчанию
+        const setDefaultBgBtn = document.getElementById('setDefaultBgBtn');
+        if (setDefaultBgBtn) {
+            setDefaultBgBtn.addEventListener('click', function() {
+                setDefaultBackground();
+                localStorage.removeItem('siteBackground');
+                updateBgPreview();
+                alert('Фон по умолчанию установлен!');
+            });
+        }
+
+        // Установка фона шапки
+        const setHeaderBgBtn = document.getElementById('setHeaderBgBtn');
+        if (setHeaderBgBtn) {
+            setHeaderBgBtn.addEventListener('click', function() {
+                const fileInput = document.getElementById('headerBgImageInput');
+                if (fileInput.files && fileInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const header = document.getElementById('siteHeader');
+                        header.style.backgroundImage = `url(${e.target.result})`;
+                        localStorage.setItem('headerBackground', e.target.result);
+                        updateHeaderBgPreview();
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            });
+        }
+
+        // Сброс фона шапки
+        const resetHeaderBgBtn = document.getElementById('resetHeaderBgBtn');
+        if (resetHeaderBgBtn) {
+            resetHeaderBgBtn.addEventListener('click', function() {
+                const header = document.getElementById('siteHeader');
+                header.style.backgroundImage = 'url(\'images/header-bg.jpg\')';
+                localStorage.removeItem('headerBackground');
+                updateHeaderBgPreview();
+            });
+        }
+
+        // Установка схемы парковки
+        const setParkingSchemeBtn = document.getElementById('setParkingSchemeBtn');
+        if (setParkingSchemeBtn) {
+            setParkingSchemeBtn.addEventListener('click', function() {
+                const fileInput = document.getElementById('parkingSchemeInput');
+                if (fileInput.files && fileInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const parkingSchemeImage = document.getElementById('parkingSchemeImage');
+                        parkingSchemeImage.src = e.target.result;
+                        localStorage.setItem('parkingScheme', e.target.result);
+                        updateParkingSchemePreview();
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            });
+        }
+
+        // Сброс схемы парковки
+        const resetParkingSchemeBtn = document.getElementById('resetParkingSchemeBtn');
+        if (resetParkingSchemeBtn) {
+            resetParkingSchemeBtn.addEventListener('click', function() {
+                const parkingSchemeImage = document.getElementById('parkingSchemeImage');
+                parkingSchemeImage.src = DEFAULT_PARKING_SCHEME;
+                localStorage.removeItem('parkingScheme');
+                updateParkingSchemePreview();
+            });
+        }
+
+        // Добавление изображения в галерею
+        const addGalleryImageBtn = document.getElementById('addGalleryImageBtn');
+        if (addGalleryImageBtn) {
+            addGalleryImageBtn.addEventListener('click', function() {
+                const fileInput = document.getElementById('galleryImageInput');
+                if (fileInput.files && fileInput.files.length > 0) {
+                    const savedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+                    Array.from(fileInput.files).forEach(file => {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            savedImages.push(e.target.result);
+                            localStorage.setItem('galleryImages', JSON.stringify(savedImages));
+                            loadGallery();
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                    fileInput.value = '';
+                }
+            });
+        }
+
+        // Сохранение текстовых изменений
+        const saveTextBtn = document.getElementById('saveTextBtn');
+        if (saveTextBtn) {
+            saveTextBtn.addEventListener('click', function() {
+                const title = document.getElementById('siteTitle').value;
+                const subtitle = document.getElementById('siteSubtitle').value;
+                const phone = document.getElementById('sitePhone').value;
+                const hours = document.getElementById('siteHours').value;
+                
+                document.getElementById('mainTitle').textContent = title;
+                document.getElementById('mainSubtitle').textContent = subtitle;
+                document.getElementById('footerPhone').textContent = phone;
+                document.querySelector('.phone-link').textContent = phone;
+                document.getElementById('footerHours').textContent = hours;
+                
+                // Сохранение в localStorage
+                localStorage.setItem('siteTitle', title);
+                localStorage.setItem('siteSubtitle', subtitle);
+                localStorage.setItem('sitePhone', phone);
+                localStorage.setItem('siteHours', hours);
+                
+                alert('Изменения сохранены!');
+            });
+        }
+
+        // Модальное окно для просмотра изображений
+        const modalClose = document.getElementById('modalClose');
+        if (modalClose) {
+            modalClose.addEventListener('click', function() {
+                document.getElementById('imageModal').classList.remove('active');
+            });
+        }
+        const imageModal = document.getElementById('imageModal');
+        if (imageModal) {
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
