@@ -1318,7 +1318,7 @@
                     <div class="parking-square">
                         <h3>Схема парковки</h3>
                         <div class="parking-wrapper">
-                            <img id="parkingSchemeImage" class="parking-scheme-image" src="images/parking-scheme.jpg" alt="Схема парковки автотехцентра Коммик на Крестовском острове">
+                            <img id="parkingSchemeImage" class="parking-scheme-image" src="images/parking-scheme.jpg" alt="Схема парковки автотехцентра Коммик на Крестовском острове" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMDAgMTUwSDE1MFYyMDBIMTAwVjE1MFoiIGZpbGw9IiNEN0RBRTEiLz4KPHBhdGggZD0iTTE1MCAxNTBIMzAwVjIwMEgxNTBWMTUwWiIgZmlsbD0iI0U4RURGMSIvPgo8cGF0aCBkPSJNMzAwIDE1SDMzNVY2NUgzMDBWMTVaIiBmaWxsPSIjRDdEQUUxIi8+CjxwYXRoIGQ9Ik0zMzUgMTVIMzg1VjY1SDMzNVYxNVoiIGZpbGw9IiNFOEVERjEiLz4KPHJlY3QgeD0iMTAwIiB5PSIyNTAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRThFREYxIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjMwMCIgcj0iNTAiIGZpbGw9IiNEN0RBRTEiLz4KPHN2ZyB4PSIxNzUiIHk9IjI3NSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CjxwYXRoIGZpbGw9IiM2QzcyODQiIGQ9Ik0yNTYgOEMxMTkgOCA4IDExOSA4IDI1NnMxMTEgMjQ4IDI0OCAyNDggMjQ4LTExMSAyNDgtMjQ4UzM5MyA4IDI1NiA4em0wIDQ0OGMtMTEwLjUgMC0yMDAtODkuNS0yMDAtMjAwUzE0NS41IDU2IDI1NiA1NnMyMDAgODkuNSAyMDAgMjAwLTg5LjUgMjAwLTIwMCAyMDB6bS05Ni0zMTJjLTE3LjcgMC0zMi0xNC4zLTMyLTMyczE0LjMtMzIgMzItMzIgMzIgMTQuMyAzMiAzMi0xNC4zIDMyLTMyIDMyem0xOTIgMGMtMTcuNyAwLTMyLTE0LjMtMzItMzJzMTQuMy0zMiAzMi0zMiAzMiAxNC4zIDMyIDMyLTE0LjMgMzItMzIgMzJ6bTAgMTkyYy02Ni4yIDAtMTIwLTUzLjgtMTIwLTEyMHM1My44LTEyMCAxMjAtMTIwIDEyMCA1My44IDEyMCAxMjAtNTMuOCAxMjAtMTIwIDEyMHptMC0xOTJjLTM5LjcgMC03MiAzMi4zLTcyIDcyczMyLjMgNzIgNzIgNzIgNzItMzIuMyA3Mi03Mi0zMi4zLTcyLTcyLTcyeiIvPgo8L3N2Zz4KPC9zdmc+'">
                         </div>
                         <div class="parking-info">
                             <p><strong>Адрес парковки:</strong> г. Санкт-Петербург, Крестовский остров, Петровская коса, 1П</p>
@@ -1479,14 +1479,14 @@
         const DEFAULT_BACKGROUND = 'images/background.jpg';
         const DEFAULT_PARKING_SCHEME = 'images/parking-scheme.jpg';
 
-        // Демонстрационные изображения для галереи
-        const defaultGalleryImages = [
-            'images/service-stapel.jpg',
-            'images/service-paint.jpg',
-            'images/service-body.jpg',
-            'images/service-wash.jpg',
-            'images/service-tire.jpg',
-            'images/service-alignment.jpg'
+        // Демонстрационные изображения для галереи работ
+        const defaultWorksGalleryImages = [
+            'images/gallery1.jpg',
+            'images/gallery2.jpg',
+            'images/gallery3.jpg',
+            'images/gallery4.jpg',
+            'images/gallery5.jpg',
+            'images/gallery6.jpg'
         ];
 
         // Данные услуг
@@ -1658,10 +1658,10 @@
             }
         }
 
-        function initializeGallery() {
-            const savedImages = JSON.parse(localStorage.getItem('galleryImages'));
+        function initializeWorksGallery() {
+            const savedImages = JSON.parse(localStorage.getItem('worksGalleryImages'));
             if (!savedImages || savedImages.length === 0) {
-                localStorage.setItem('galleryImages', JSON.stringify(defaultGalleryImages));
+                localStorage.setItem('worksGalleryImages', JSON.stringify(defaultWorksGalleryImages));
             }
         }
 
@@ -1674,7 +1674,7 @@
             gallery.innerHTML = '';
             adminGallery.innerHTML = '';
             
-            const savedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+            const savedImages = JSON.parse(localStorage.getItem('worksGalleryImages')) || [];
             
             savedImages.forEach((imgData, index) => {
                 // Основная галерея
@@ -1705,9 +1705,9 @@
         }
 
         function deleteImage(index) {
-            const savedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+            const savedImages = JSON.parse(localStorage.getItem('worksGalleryImages')) || [];
             savedImages.splice(index, 1);
-            localStorage.setItem('galleryImages', JSON.stringify(savedImages));
+            localStorage.setItem('worksGalleryImages', JSON.stringify(savedImages));
             loadGallery();
         }
 
@@ -1970,8 +1970,8 @@
 
         // Инициализация при загрузке страницы
         window.addEventListener('load', function() {
-            // Инициализируем галерею демо-изображениями
-            initializeGallery();
+            // Инициализируем галерею работ
+            initializeWorksGallery();
             
             // Загружаем сохраненный фон
             const savedBg = localStorage.getItem('siteBackground');
@@ -2186,12 +2186,12 @@
             addGalleryImageBtn.addEventListener('click', function() {
                 const fileInput = document.getElementById('galleryImageInput');
                 if (fileInput.files && fileInput.files.length > 0) {
-                    const savedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+                    const savedImages = JSON.parse(localStorage.getItem('worksGalleryImages')) || [];
                     Array.from(fileInput.files).forEach(file => {
                         const reader = new FileReader();
                         reader.onload = function(e) {
                             savedImages.push(e.target.result);
-                            localStorage.setItem('galleryImages', JSON.stringify(savedImages));
+                            localStorage.setItem('worksGalleryImages', JSON.stringify(savedImages));
                             loadGallery();
                         };
                         reader.readAsDataURL(file);
