@@ -119,7 +119,7 @@
         .header {
             background: url('images/header-bg.jpg') center/cover;
             color: white;
-            padding: 100px 15px 60px;
+            padding: 80px 15px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -183,24 +183,24 @@
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             color: #ff0000;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
             font-weight: 300;
         }
 
-        /* Navigation */
+        /* Navigation - ИСПРАВЛЕНА ДЛЯ МОБИЛЬНЫХ */
         .nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            padding: 10px 15px;
-            position: fixed;
+            padding: 8px 15px;
+            position: sticky;
             top: 0;
             left: 0;
             right: 0;
@@ -219,7 +219,7 @@
         .nav ul {
             list-style: none;
             display: flex;
-            gap: 15px;
+            gap: 8px;
             flex-wrap: wrap;
             margin: 0;
             justify-content: center;
@@ -229,18 +229,21 @@
             color: var(--dark);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             transition: all 0.3s ease;
-            padding: 5px 0;
+            padding: 4px 8px;
             position: relative;
             cursor: pointer;
             opacity: 0.8;
             white-space: nowrap;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
         }
 
         .nav a:hover {
             opacity: 1;
             color: var(--primary);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         /* Features Section */
@@ -298,7 +301,7 @@
         /* Main Content */
         .main-content {
             flex: 1;
-            padding: 60px 0 0;
+            padding: 20px 0 0;
         }
 
         .content-section {
@@ -1080,25 +1083,19 @@
             animation: slideInRight 0.6s ease-out;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-            padding: 5px;
-        }
-
         /* Responsive Design */
         @media (min-width: 480px) {
             .header h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .header p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+            
+            .nav a {
+                font-size: 0.8rem;
+                padding: 5px 10px;
             }
             
             .services-grid {
@@ -1121,15 +1118,33 @@
             }
             
             .header {
-                padding: 120px 20px 80px;
+                padding: 100px 20px 60px;
             }
             
             .header h1 {
-                font-size: 3.2rem;
+                font-size: 3rem;
             }
             
             .header p {
                 font-size: 1.3rem;
+            }
+            
+            .nav {
+                padding: 10px 20px;
+            }
+            
+            .nav ul {
+                gap: 20px;
+            }
+            
+            .nav a {
+                font-size: 0.9rem;
+                padding: 6px 0;
+                background: none;
+            }
+            
+            .nav a:hover {
+                background: none;
             }
             
             .features-list {
@@ -1177,7 +1192,7 @@
 
         @media (min-width: 1024px) {
             .header {
-                padding: 140px 20px 100px;
+                padding: 120px 20px 80px;
             }
             
             .header h1 {
@@ -1201,14 +1216,12 @@
 
         @media (max-width: 767px) {
             .nav ul {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
+                gap: 5px;
             }
             
             .nav a {
-                font-size: 0.9rem;
-                padding: 8px 0;
+                font-size: 0.7rem;
+                padding: 4px 6px;
             }
             
             .header-top {
@@ -1222,15 +1235,15 @@
 
         @media (max-width: 480px) {
             .header {
-                padding: 80px 15px 40px;
+                padding: 70px 15px 30px;
             }
             
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .header p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .content-section h2 {
@@ -1270,6 +1283,11 @@
                 bottom: 15px;
                 right: 15px;
             }
+            
+            .nav a {
+                font-size: 0.65rem;
+                padding: 3px 5px;
+            }
         }
     </style>
 </head>
@@ -1289,7 +1307,7 @@
         </div>
     </header>
     
-    <!-- Навигационная панель под шапкой -->
+    <!-- Навигационная панель под шапкой - ИСПРАВЛЕНА ДЛЯ МОБИЛЬНЫХ -->
     <nav class="nav" id="mainNav">
         <div class="nav-container">
             <ul>
@@ -1399,7 +1417,7 @@
                     <div class="parking-square">
                         <h3>Схема парковки</h3>
                         <div class="parking-wrapper">
-                            <img id="parkingSchemeImage" class="parking-scheme-image" src="images/parking-scheme.jpg" alt="Схема парковки автотехцентра Коммик на Крестовском острове" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMDAgMTUwSDE1MFYyMDBIMTAwVjE1MFoiIGZpbGw9IiNEN0RBRTEiLz4KPHBhdGggZD0iTTE1MCAxNTBIMzAwVjIwMEgxNTBWMTUwWiIgZmlsbD0iI0U4RURGMSIvPgo8cGF0aCBkPSJNMzAwIDE1SDMzNVY2NUgzMDBWMTVaIiBmaWxsPSIjRDdEQUUxIi8+CjxwYXRoIGQ9Ik0zMzUgMTVIMzg1VjY1SDMzNVYxNVoiIGZpbGw9IiNFOEVERjEiLz4KPHJlY3QgeD0iMTAwIiB5PSIyNTAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRThFREYxIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjMwMCIgcj0iNTAiIGZpbGw9IiNEN0RBRTEiLz4KPHN2ZyB4PSIxNzUiIHk9IjI3NSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CjxwYXRoIGZpbGw9IiM2QzcyODQiIGQ9Ik0yNTYgOEMxMTkgOCA4IDExOSA4IDI1NnMxMTEgMjQ4IDI0OCAyNDggMjQ4LTExMSAyNDgtMjQ4UzM5MyA4IDI1NiA4em0wIDQ0OGMtMTEwLjUgMC0yMDAtODkuNS0yMDAtMjAwUzE0NS41IDU2IDI1NiA1NnMyMDAgODkuNSAyMDAgMjAwLTg5LjUgMjAwLTIwMCAyMDB6bS05Ni0zMTJjLTE3LjcgMC0zMi0xNC4zLTMyLTMyczE0LjMtMzIgMzItMzIgMzIgMTQuMyAzMiAzMi0xNC4zIDMyLTMyIDMyem0xOTIgMGMtMTcuNyAwLTMyLTE0LjMtMzItMzJzMTQuMy0zMiAzMi0zMiAzMiAxNC4zIDMyIDMyLTE0LjMgMzItMzIgMzJ6bTAgMTkyYy02Ni4yIDAtMTIwLTUzLjgtMTIwLTEyMHM1My44LTEyMCAxMjAtMTIwIDEyMCA1My44IDEyMCAxMjAtNTMuOCAxMjAtMTIwIDEyMHptMC0xOTJjLTM5LjcgMC03MiAzMi4zLTcyIDcyczMyLjMgNzIgNzIgNzIgNzItMzIuMyA3Mi03Mi0zMi4zLTcyLTcyLTcyeiIvPgo8L3N2Zz4KPC9zdmc+'">
+                            <img id="parkingSchemeImage" class="parking-scheme-image" src="images/parking-scheme.jpg" alt="Схема парковки автотехцентра Коммик на Крестовском острове" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMDAgMTUwSDE1MFYyMDBIMTAwVjE1MFoiIGZpbGw9IiNEN0RBRTEiLz4KPHBhdGggZD0iTTE1MCAxNTBIMzAwVjIwMEgxNTBWMTUwWiIgZpbGw9IiNFOEVERjEiLz4KPHBhdGggZD0iTTMwMCAxNUgzMzVWNjVIMzAwVjE1WiIgZmlsbD0iI0Q3REFFMSIvPgo8cGF0aCBkPSJNMzM1IDE1SDM4NVY2NUgzMzVWMTVaIiBmaWxsPSIjRThFREYxIi8+CjxyZWN0IHg9IjEwMCIgeT0iMjUwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI0U4RURGMSIvPgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSIzMDAiIHI9IjUwIiBmaWxsPSIjRDdEQUUxIi8+CjxzdmcgeD0iMTc1IiB5PSIyNzUiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUxMiA1MTIiPgo8cGF0aCBmaWxsPSIjNkM3Mjg0IiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAwem0tOTYtMzEyYy0xNy43IDAtMzItMTQuMy0zMi0zMnMxNC4zLTMyIDMyLTMyIDMyIDE0LjMgMzIgMzItMTQuMyAzMi0zMiAzMnptMTkyIDBjLTE3LjcgMC0zMi0xNC4zLTMyLTMyczE0LjMtMzIgMzItMzIgMzIgMTQuMyAzMiAzMi0xNC4zIDMyLTMyIDMyem0wIDE5MmMtNjYuMiAwLTEyMC01My44LTEyMC0xMjBzNTMuOC0xMjAgMTIwLTEyMCAxMjAgNTMuOCAxMjAgMTIwLTUzLjggMTIwLTEyMCAxMjB6bTAtMTkyYy0zOS43IDAtNzIgMzIuMy03MiA3MnMzMi4zIDcyIDcyIDcyIDcyLTMyLjMgNzItNzItMzIuMy03Mi03Mi03MnoiLz4KPC9zdmc+Cjwvc3ZnPg=='">
                         </div>
                         <div class="parking-info">
                             <p><strong>Адрес парковки:</strong> г. Санкт-Петербург, Крестовский остров, Петровская коса, 1П</p>
